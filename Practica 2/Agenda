@@ -1,0 +1,22 @@
+/30/11/2015
+
+Búsqueda en internet información sobre Java 8. 
+Código de las clases NodoRed, Interconexion, TipoConexion.
+Código de prueba para corregir errores en caso de que los haya en la clase TestHackerTools.
+Repaso de Java 8 para conocer mejor el uso de las lambda expresiones, las clases stream, collectors, etc...
+
+
+08/12/2015
+
+Creación de factorias de las clases NodoRed e Interconexion.
+Repaso de la clase Stream y métodos nuevos de Java 8.
+
+13/12/2015
+
+Búsqueda y resolución de errores en las distintas clases (NodoRed, Interconexión) a la hora de crear factorias.
+Retocar el fichero de entrada para adaptarlo al código hecho GraphsReader.
+
+15/12/015
+
+Creación de la clase HackersTools para los métodos estáticos necesarios para resolver los problemas de la práctica.
+Pruebas de los métodos en la clase TestHackersTool.

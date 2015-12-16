@@ -1,0 +1,30 @@
+26/10/2015
+
+Búsqueda en internet como pasar de String a código ASCII. 
+Código iterativo hecho a falta de comparar la suma del String en ASCII y el número detrás del $. 
+Métodos de apoyo: separaTexto y separaCódigo.
+Repaso de Java, ya que estoy un poco oxidado.
+
+
+02/11/2015
+
+Esquema recursivo del ejercicio e implementación del código en Java.
+
+
+04/11/2015
+
+Comienzo del documento de entrega.
+
+09/11/2015
+
+Continuación del documento escrito y corrección del código java. Implementación del código recursivo final.
+
+15/11/2015
+
+Reescritura del código en java debido a que no encuentro la forma de saber la complejidad del método splitter de guava.
+No ha necesidad de métodos auxiliares, debido al código nuevo.
+
+16/11/2015
+
+Completado el documento para entregar completando las partes de portfolio, análisis y complejidad y las pruebas y trazas.
+Últimas pruebas con el algoritmo realizado para completar los ejercicios faltantes en el documento para entrega.

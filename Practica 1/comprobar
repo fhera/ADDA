@@ -1,0 +1,137 @@
+package comprobarIntegemplridad;
+
+import java.util.ArrayList;
+
+public class comprobarIntegemplridad {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String txt = "Esto es un texto securizado$2516";
+
+		// Prueba: letra por letra en ASCII
+		//
+		// for (int x = 0; x < txt.length(); x++)
+		// System.out.println(txt.charAt(x) + " = " + + valor(txt.charAt(x)));
+
+		System.out.println("Texto para comprobar: " + separaTexto(txt));
+		System.out.println("Código recibido: " + separaCodigo(txt));
+		System.out.println("Valor Numérico Iterativo: "
+				+ valorNumericoIterativo(separaTexto(txt)));
+		System.out.println("Valor Numérico Recursivo: "
+				+ valorNumerico(separaTexto(txt)));
+		System.out.println("Valor Numérico Recursivo Final: "
+				+ valorNumericoFinal(separaTexto(txt)));
+		System.out.println("¿El texto es íntegro? " + comprobarIntegridad(txt));
+
+	}
+
+	public static String separaTexto(String txt) {
+		String res = "";
+		// Partimos la cadena y la almacenamos en un iterador
+		Splitter sp = Splitter.on(CharMatcher.anyOf("$"));
+		Iterable<String> it = sp.omitEmptyStrings().trimResults().split(txt);
+
+		// Recorremos el iterador y almacenamos en una lista
+		List<String> parametros = new ArrayList<String>();
+
+		for (String pal : it) {
+			parametros.add(pal);
+		}
+		if (parametros.size() == 1) {
+			throw new IllegalArgumentException("Formato de cadena no válido.");
+		} else {
+			String st1 = parametros.get(0);
+			// Integer i = new Integer(parametros.get(1));
+			res = st1;
+		}
+		return res;
+	}
+
+	public static Integer separaCodigo(String txt) {
+		Integer res = 0;
+		// Partimos la cadena y la almacenamos en un iterador
+		Splitter sp = Splitter.on(CharMatcher.anyOf("$"));
+		Iterable<String> it = sp.omitEmptyStrings().trimResults().split(txt);
+
+		// Recorremos el iterador y almacenamos en una lista
+		List<String> parametros = new ArrayList<String>();
+
+		for (String pal : it) {
+			parametros.add(pal);
+		}
+		if (parametros.size() == 1) {
+			throw new IllegalArgumentException("Formato de cadena no válido");
+		} else {
+			// String st1 = parametros.get(0);
+			Integer i = new Integer(parametros.get(1));
+
+			res = i;
+		}
+		return res;
+	}
+
+	public static Integer valorNumerico(String txt) {
+		return valorNumericoRecursivo(txt, txt.length() - 1);
+	}
+
+	private static Integer valorNumericoRecursivo(String txt, Integer n) {
+		Integer res;
+
+		if (n == -1) {
+			res = 0;
+		} else {
+			res = valor(txt.charAt(n)) + valorNumericoRecursivo(txt, n - 1);
+		}
+
+		return res;
+	}
+
+	public static Integer valorNumericoFinal(String txt) {
+		return valorNumericoRecursivoFinal(txt, txt.length() - 1, 0);
+	}
+
+	private static Integer valorNumericoRecursivoFinal(String txt, Integer n,
+			Integer acum) {
+		Integer res;
+
+		if (n == -1) {
+			res = acum;
+		} else {
+			res = valorNumericoRecursivoFinal(txt, n - 1,
+					acum + valor(txt.charAt(n)));
+		}
+
+		return res;
+	}
+	
+//	Rehacer el iterativo correspodiendo con el algoritmo recursivo
+//	final.
+	public static Integer valorNumericoIterativo(String txt) {
+		Integer res = 0;
+
+		for (int x = 0; x < txt.length(); x++) {
+			// codePointAt pasa de String a ASCII
+			res += valor(txt.charAt(x));
+		}
+		return res;
+	}
+
+	public static Boolean comprobarIntegridad(String txt) {
+		Boolean res = false;
+
+		if (valorNumerico(separaTexto(txt)).equals(separaCodigo(txt))) {
+			res = true;
+		} else
+			
+			
+			
+			res = false;
+		return res;
+	}
+
+	public static int valor(char c) {
+		return (int) c;
+	}
+
+}
+
