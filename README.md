@@ -1,2 +1,2 @@
 # ADDA
-Proyectos de estudiantes
+Proyectos de ADDA
